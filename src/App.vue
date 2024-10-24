@@ -3,15 +3,13 @@ import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
-  <header>
-      <h1 class="text-3xl text-emerald-800 text-center">Hello</h1>
+  <ThreeColumnLayout>
+    <h2 class="text-3xl font-bold mb-4">Homepage content</h2>
+    <ArticleCard v-for="article in articles" :article="article" />
 
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/posts"></RouterLink>
-      </nav>
-  </header>
-
-  <RouterView />
+    <template #aside>
+      <WidgetFriendSuggestions />
+    </template>
+  </ThreeColumnLayout>
 </template>
 
